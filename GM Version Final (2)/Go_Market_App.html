@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="Stylesheet" href="GMStyle_app.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+-Go Market App-
+</title>
+</head>
+
+<body>
+
+    <div class="back_settings">
+        <!-- ---------------------pie de pagina ---->
+        <div id="ToPieDePag" class="pieDePagina">
+            <p2 id="bottomSection">información de contacto:</p2>
+            <ul class="contacto">
+                <li> Ciudad de Buenos Aires </li>
+                <li> Tel: +54 1001 1100 11</li>
+                <li> Calle: Alicia Moreau de Justo 1300 </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="apartado_1">
+        <h2> Encuentre el mercado en el que esté interesado: </h2>
+        <p1> Puede buscar entre varias opciones, seleccione una para comenzar !</p1>
+        <div apartado1.1>
+            <a href="#ToDivisas" class="divisasTxt"> Divisas </a>
+            <a href="https://es.investing.com/charts/forex-charts"><img src="currencies.jpg" alt="MoneyIcon" class="Divisas"></a>
+            <a href="#ToAcciones" class="accionesTxt"> Acciones</a>
+            <a href="https://www.plus500.at/es/Instruments#Stocks"><img href="#" src="acciones.jpg" alt="empresasLogo" class="Acciones"></a>
+            <a href="#ToMaterias" class="materiasTxt"> Materias primas</a>
+            <a href="#"><img href="https://es.investing.com/commodities/" src="materiasP.jpg" alt="Mat_primas" class="Materias"></a>
+
+        </div>
+    </div>
+
+        <!--------------------------------------------------------------- opcion: comprar-->
+    <div class = "popupOperacion" id="popupOperacion">
+        <input id="closeButton" value="X" type="button" name="closeBut" onclick="popupClose()"></br>
+        <h4 class="hOperacion" id="operationTitle">titulo</h4>
+        <form id="formDiv" class="formOperacion">
+            <ul class="listaOperacion">
+                <li for="cantidad">cantidad:</br></li>
+                <li style="margin:0%; padding: 0%;"> <input type="text" id="cantidad" value="0"></li>
+                <li> <button type="button" class="bStyle" onclick="add(1)">+</button></li>
+                <li> <button type="button" class="bStyle" onclick="sub(-1)">-</button></li>
+            </ul>
+            <ul class="listaPrecio">
+                <li for="precio"><p>precio:</p><br></li>
+                <li><p id="precio">#number</p></li>
+            </ul>
+            <label class="comprarButton"><input id="comprarDiv" type="button" value="comprar" name="comprar" onclick="popupClose()"></label></br>
+        </form>
+    </div>
+        <!--------------------------------------------------------------- opcion: vender-->
+    <div class = "popupOperacion2" id="popupOperacion2">
+        <input id="closeButton" value="X" type="button" name="closeBut" onclick="popupClose2()"></br>
+        <h4 class="hOperacion" id="operationTitle2">titulo</h4>
+        <form id="formDiv" class="formOperacion">
+            <ul class="listaOperacion">
+                <li for="cantidad">cantidad:</br></li>
+
+                <li style="margin:0%; padding: 0%;"> <input type="text" id="cantidad2" value="0"></li>
+                <li> <button type="button" class="bStyle" onclick="add2(1)">+</button></li>
+                <li> <button type="button" class="bStyle" onclick="sub2(-1)">-</button></li>
+            </ul>
+            <ul class="listaPrecio">
+                <li for="precio"><p>precio:</p><br></li>
+                <li><p id="precio">#number</p></li>
+            </ul>
+            <label class="comprarButton"><input id="comprarDiv" type="button" value="vender" name = "vender" onclick="popupClose2()"></label></br>
+        </form>
+    </div>
+
+    <!-------------------------------OPERACIONES: DIVISAS----------------------------------->
+    <!-------------------Agregar algoritmo para modificar precios de compra/venta------------>
+
+    <div class="square"></div>
+    <div id="ToDivisas" class="apartado2"> 
+        <h3> Divisas </h3>
+        <table class="CTable" method="get" action="<?php echo $_SERVER['PHP_SELF'];?>">
+            <tr>
+                <th>Venta / Compra</th>
+            </tr>
+            <tr>
+                <td style="color: blueviolet";> EUR/USD</td>
+                <td><p id="s_eurusd">....</p></td>
+                <td><p id="b_eurusd">....</p> </td>
+            <td class="positionLst">
+                <ul class="tableLst">
+                    <li> <input type="button" value="Sell" onclick="popupOpen2('EUR/USD')"> </br> </li>
+                    <li> <input type="button" value="Buy" onclick="popupOpen('EUR/USD')"></br> </li>
+                    <li> <input type="button" value="+ info"></br> </li>
+                </ul>
+            </td>
+            </tr>
+            <tr>
+                <td style="color: blueviolet";> USD/JPY </td>
+                <td><p id="s_usdjpy">....</p></td>
+                <td><p id="b_usdjpy">....</p></td>
+                <td>
+                    <ul class="tableLst">
+                        <li> <input type="button" value="Sell" onclick="popupOpen2('USD/JPY')"> <?php $product = "usdjpy"; ?> </br> </li>
+                        <li> <input type="button" value="Buy" name = "usdjpy" onclick="popupOpen('USD/JPY')"></br> </li>
+                        <li> <input type="button" value="+ info"></br> </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="color: blueviolet";> GBP/USD </td>
+                <td><p id="s_gbpusd">....</p> </td>
+                <td><p id="b_gbpusd">....</p> </td>
+                <td>
+                    <ul class="tableLst">
+                        <li> <input type="button" value="Sell" name = "gbpusd" onclick="popupOpen2('GBP/USD')"></br> </li>
+                        <li> <input type="button" value="Buy" name = "gbpusd" onclick="popupOpen('GBP/USD')"></br> </li>
+                        <li> <input type="button" value="+ info"></br> </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="color: blueviolet";> USD/TRY </td>
+                <td><p id="s_usdtry">....</p> </td>
+                <td><p id="b_usdtry">....</p> </td>
+                <td>
+                    <ul class="tableLst">
+                        <li> <input type="button" value="Sell" name = "usdtry" onclick="popupOpen2('USD/TRY')"></br> </li>
+                        <li> <input type="button" value="Buy" name = "usdtry" onclick="popupOpen('USD/TRY')"></br> </li>
+                        <li> <input type="button" value="+ info"></br> </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="color: blueviolet";> USD/CAD </td>
+                <td><p id="s_usdcad">....</p> </td>
+                <td><p id="b_usdcad">....</p> </td>
+                <td>
+                    <ul class="tableLst">
+                        <li> <input type="button" value="Sell" name = "usdcad" onclick="popupOpen2('USD/CAD')"></br> </li>
+                        <li> <input type="button" value="Buy" name = "usdcad" onclick="popupOpen('USD/CAD')"></br> </li>
+                        <li> <input type="button" value="+ info"></br> </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="color: blueviolet";> EUR/JPY </td>
+                <td><p id="s_eurjpy">....</p> </td>
+                <td><p id="b_eurjpy">....</p> </td>
+                <td>
+                    <ul class="tableLst">
+                        <li> <input type="button" value="Sell" name = "eurjpy" onclick="popupOpen2('EUR/JPY')"></br> </li>
+                        <li> <input type="button" value="Buy" name = "eurjpy" onclick="popupOpen('EUR/JPY')"></br> </li>
+                        <li> <input type="button" value="+ info"></br> </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="color: blueviolet";> AUD/USD </td>
+                <td><p id="s_audusd">....</p> </td>
+                <td><p id="b_audusd">....</p> </td>
+                <td>
+                    <ul class="tableLst">
+                        <li> <input type="button" value="Sell" name = "audusd" onclick="popupOpen2('AUD/USD')"></br> </li>
+                        <li> <input type="button" value="Buy" name = "audusd" onclick="popupOpen('AUD/USD')"></br> </li>
+                        <li> <input type="button" value="+ info"></br> </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="color: blueviolet";> EUR/GBP </td>
+                <td><p id="s_eurgbp">....</p> </td>
+                <td><p id="b_eurgbp">....</p> </td>
+                <td>
+                    <ul class="tableLst">
+                        <li> <input type="button" value="Sell" name = "eurgbp" onclick="popupOpen2('EUR/GBP')"></br> </li>
+                        <li> <input type="button" value="Buy" name = "eurgbp" onclick="popupOpen('EUR/GBP')"></br> </li>
+                        <li> <input type="button" value="+ info"></br> </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="color: blueviolet";> GBP/NZD</td>
+                <td><p id="s_gbpnzd">....</p> </td>
+                <td><p id="b_gbpnzd">....</p> </td>
+                <td>
+                    <ul class="tableLst">
+                        <li> <input type="button" value="Sell" name = "gbpnzd" onclick="popupOpen2('GBP/NZD')"></br> </li>
+                        <li> <input type="button" value="Buy" name = "gbpnzd" onclick="popupOpen('GBP/NZD')"></br> </li>
+                        <li> <input type="button" value="+ info"></br> </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="color: blueviolet";> GBP/CAD </td>
+                <td><p id="s_gbpcad">....</p> </td>
+                <td><p id="b_gbpcad">....</p> </td>
+                <td>
+                    <ul class="tableLst">
+                        <li> <input type="button" value="Sell" name = "gbpcad" onclick="popupOpen2('GBP/CAD')"></br> </li>
+                        <li> <input type="button" value="Buy" name = "gbpcad" onclick="popupOpen('GBP/CAD')"></br> </li>
+                        <li> <input type="button" value="+ info"></br> </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="color: blueviolet";> USD/RUB</td>
+                <td><p id="s_usdrub">....</p> </td>
+                <td><p id="b_usdrub">....</p> </td>
+                <td>
+                    <ul class="tableLst">
+                        <li> <input type="button" value="Sell" name = "usdrub" onclick="popupOpen2('USD/RUB')"></br> </li>
+                        <li> <input type="button" value="Buy" name = "usdrub" onclick="popupOpen('USD/RUB')"></br> </li>
+                        <li> <input type="button" value="+ info"></br> </li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-------------------------------OPERACIONES: ACCIONES------------------->
+
+
+
+    <div id="ToAcciones" class="apartado3"> 
+        <h3> Acciones </h3>
+        <table class="CTable">
+            <tr>
+                <th> Cotizacion </th>
+            </tr>
+            <tr>
+                <td style="color: blueviolet";> Tencent</td>
+                <td><p id="s_tecent">....</p> </td>
+                <td>
+                    <ul class="tableLst">
+                        <li> <input type="button" value="Sell" onclick="popupOpen2('Tencent')"></br> </li>
+                        <li> <input type="button" value="Buy" onclick="popupOpen('Tencent')"></br> </li>
+                        <li> <input type="button" value="+ info"></br> </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="color: blueviolet";>Denso</td>
+                <td><p id="s_denso">....</p> </td>
+                <td>
+                    <ul class="tableLst">
+                        <li> <input type="button" value="Sell" onclick="popupOpen2('Denso')"></br> </li>
+                        <li> <input type="button" value="Buy" onclick="popupOpen('Denso')"></br> </li>
+                        <li> <input type="button" value="+ info"></br> </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="color: blueviolet";>Xiaomi</td>
+                <td><p id="s_xiaomi">....</p> </td>
+                <td>
+                    <ul class="tableLst">
+                        <li> <input type="button" value="Sell" onclick="popupOpen2('Xiaomi')"></br> </li>
+                        <li> <input type="button" value="Buy" onclick="popupOpen('Xiaomi')"></br> </li>
+                        <li> <input type="button" value="+ info"></br> </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="color: blueviolet";>Bank of E.Asia</td>
+                <td><p id="s_bea">....</p> </td>
+                <td>
+                    <ul class="tableLst">
+                        <li> <input type="button" value="Sell" onclick="popupOpen2('Bank of E.Asia')"></br> </li>
+                        <li> <input type="button" value="Buy" onclick="popupOpen('Bank of E.Asia')"></br> </li>
+                        <li> <input type="button" value="+ info"></br> </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="color: blueviolet";>Porsche AG</td>
+                <td><p id="s_porsche">....</p> </td>
+                <td>
+                    <ul class="tableLst">
+                        <li> <input type="button" value="Sell" onclick="popupOpen2('Porsche AG')"></br> </li>
+                        <li> <input type="button" value="Buy" onclick="popupOpen('Porsche AG')"></br> </li>
+                        <li> <input type="button" value="+ info"></br> </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="color: blueviolet";>Apple</td>
+                <td><p id="s_apple">....</p> </td>
+                <td>
+                    <ul class="tableLst">
+                        <li> <input type="button" value="Sell" onclick="popupOpen2('Apple')"></br> </li>
+                        <li> <input type="button" value="Buy" onclick="popupOpen('Apple')"></br> </li>
+                        <li> <input type="button" value="+ info"></br> </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="color: blueviolet";>Tesla</td>
+                <td><p id="s_tesla">....</p> </td>
+                <td>
+                    <ul class="tableLst">
+                        <li> <input type="button" value="Sell" onclick="popupOpen2('Tesla')"></br> </li>
+                        <li> <input type="button" value="Buy" onclick="popupOpen('Tesla')"></br> </li>
+                        <li> <input type="button" value="+ info"></br> </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="color: blueviolet";>Colruyt</td>
+                <td><p id="s_colruyt">....</p> </td>
+                <td>
+                    <ul class="tableLst">
+                        <li> <input type="button" value="Sell" onclick="popupOpen2('Colruyt')"></br> </li>
+                        <li> <input type="button" value="Buy" onclick="popupOpen('Colruyt')"></br> </li>
+                        <li> <input type="button" value="+ info"></br> </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="color: blueviolet";>NIO</td>
+                <td><p id="s_nio">....</p> </td>
+                <td>
+                    <ul class="tableLst">
+                        <li> <input type="button" value="Sell" onclick="popupOpen2('NIO')"></br> </li>
+                        <li> <input type="button" value="Buy" onclick="popupOpen('NIO')"></br> </li>
+                        <li> <input type="button" value="+ info"></br> </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="color: blueviolet";>Alphabet</td>
+                <td><p id="s_alphabet">....</p> </td>
+                <td>
+                    <ul class="tableLst">
+                        <li> <input type="button" value="Sell" onclick="popupOpen2('Alphabet')"></br> </li>
+                        <li> <input type="button" value="Buy" onclick="popupOpen('Alphabet')"></br> </li>
+                        <li> <input type="button" value="+ info"></br> </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="color: blueviolet";>Amazon</td>
+                <td><p id="s_amazon">....</p> </td>
+                <td>
+                    <ul class="tableLst">
+                        <li> <input type="button" value="Sell" onclick="popupOpen2('Amazon')"></br> </li>
+                        <li> <input type="button" value="Buy" onclick="popupOpen('Amazon')"></br> </li>
+                        <li> <input type="button" value="+ info"></br> </li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <!-------------------------------OPERACIONES: MATERIAS PRIMAS------------------->
+
+    <div id="ToMaterias" class="apartado4"> 
+        <h3> Materias Primas </h3>
+        <table class="CTable">
+            <tr>
+                <th> Cotizacion </th>
+            </tr>
+            <tr>
+                <td style="color: blueviolet";> Petróleo</td>
+                <td><p id="s_oil">....</p> </td>
+                <td>
+                    <ul class="tableLst">
+                        <li> <input type="button" value="Sell" onclick="popupOpen2('Petróleo')"></br> </li>
+                        <li> <input type="button" value="Buy" onclick="popupOpen('Petróleo')"></br> </li>
+                        <li> <input type="button" value="+ info"></br> </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="color: blueviolet";>Plata</td>
+                <td><p id="s_plata">....</p> </td>
+                <td>
+                    <ul class="tableLst">
+                        <li> <input type="button" value="Sell" onclick="popupOpen2('Plata')"></br> </li>
+                        <li> <input type="button" value="Buy" onclick="popupOpen('Plata')"></br> </li>
+                        <li> <input type="button" value="+ info"></br> </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="color: blueviolet";>Petróleo Brent</td>
+                <td><p id="s_brent">....</p> </td>
+                <td>
+                    <ul class="tableLst">
+                        <li> <input type="button" value="Sell" onclick="popupOpen2('Petróleo Brent')"></br> </li>
+                        <li> <input type="button" value="Buy" onclick="popupOpen('Petróleo Brent')"></br> </li>
+                        <li> <input type="button" value="+ info"></br> </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="color: blueviolet";>Oro</td>
+                <td><p id="s_oro">....</p> </td>
+                <td>
+                    <ul class="tableLst">
+                        <li> <input type="button" value="Sell" onclick="popupOpen2('Oro')"></br> </li>
+                        <li> <input type="button" value="Buy" onclick="popupOpen('Oro')"></br> </li>
+                        <li> <input type="button" value="+ info"></br> </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="color: blueviolet";>Azúcar</td>
+                <td><p id="s_azucar">....</p> </td>
+                <td>
+                    <ul class="tableLst">
+                        <li> <input type="button" value="Sell" onclick="popupOpen2('Azúcar')"></br> </li>
+                        <li> <input type="button" value="Buy" onclick="popupOpen('Azúcar')"></br> </li>
+                        <li> <input type="button" value="+ info"></br> </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="color: blueviolet";>Cobre</td>
+                <td><p id="s_cobre">....</p> </td>
+                <td>
+                    <ul class="tableLst">
+                        <li> <input type="button" value="Sell" onclick="popupOpen2('Cobre')"></br> </li>
+                        <li> <input type="button" value="Buy" onclick="popupOpen('Cobre')"></br> </li>
+                        <li> <input type="button" value="+ info"></br> </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="color: blueviolet";>Paladio</td>
+                <td><p id="s_paladio">....</p> </td>
+                <td>
+                    <ul class="tableLst">
+                        <li> <input type="button" value="Sell" onclick="popupOpen2('Paladio')"></br> </li>
+                        <li> <input type="button" value="Buy" onclick="popupOpen('Paladio')"></br> </li>
+                        <li> <input type="button" value="+ info"></br> </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="color: blueviolet";>Café</td>
+                <td><p id="s_cafe">....</p> </td>
+                <td>
+                    <ul class="tableLst">
+                        <li> <input type="button" value="Sell" onclick="popupOpen2('Café')"></br> </li>
+                        <li> <input type="button" value="Buy" onclick="popupOpen('Café')"></br> </li>
+                        <li> <input type="button" value="+ info"></br> </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="color: blueviolet";>Gas Natural</td>
+                <td><p id="s_gasn">....</p> </td>
+                <td>
+                    <ul class="tableLst">
+                        <li> <input type="button" value="Sell" onclick="popupOpen2('Gas Natural')"></br> </li>
+                        <li> <input type="button" value="Buy" onclick="popupOpen('Gas Natural')"></br> </li>
+                        <li> <input type="button" value="+ info"></br> </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="color: blueviolet";>Gasolina</td>
+                <td><p id="s_gasolina">....</p> </td>
+                <td>
+                    <ul class="tableLst">
+                        <li> <input type="button" value="Sell" onclick="popupOpen2('Gasolina')"></br> </li>
+                        <li> <input type="button" value="Buy" onclick="popupOpen('Gasolina')"></br> </li>
+                        <li> <input type="button" value="+ info"></br> </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="color: blueviolet";>Soja</td>
+                <td><p id="s_soja">....</p> </td>
+                <td>
+                    <ul class="tableLst">
+                        <li> <input type="button" value="Sell" onclick="popupOpen2('Soja')"></br> </li>
+                        <li> <input type="button" value="Buy" onclick="popupOpen('Soja')"></br> </li>
+                        <li> <input type="button" value="+ info"></br> </li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+
+
+    <!-- javascript here! -->
+    <script src="GMScript_app.js"></script>
+    <script src="cotizaciones.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+

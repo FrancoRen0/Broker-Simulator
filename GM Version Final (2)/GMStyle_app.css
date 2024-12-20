@@ -1,0 +1,932 @@
+body {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    height: 2800px;
+}
+
+/*-------------------------------PRIMER APARTADO/MENU DE NAVEGACION---------------*/
+.main {
+    display: flex;
+    position: sticky;
+    top: 0%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 3.5%;
+    width: 100%;
+    margin-top: 3%;
+
+    background-color: rgb(197, 187, 187);
+    z-index: 4;
+    opacity: 0.8;
+    color: black;
+}
+
+.back_settings {
+    content: '';
+    margin: 0%;
+    padding: 0%;
+    top: 0%;
+    position: absolute;
+    width: 100%;
+    height: 380%;
+    background-color: rgb(247, 247, 247);
+}
+
+.back_settings2 {
+    visibility: hidden;
+    content: '';
+    margin: 0%;
+    padding: 0%;
+    top: 0%;
+    position: absolute;
+    width: 100%;
+    height: 380%;
+    background-color: black;
+    opacity: 0.8;
+    z-index: 3;
+}
+
+.back_settings2.openSettings2 {
+    visibility: visible;
+}
+
+
+.logoImg {
+    position: absolute;
+    width: 85px;
+    height: 60%;
+    border-radius: 15px;
+}
+
+.logo {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 4%;
+    margin-top: 1%;
+}
+
+h1 {
+    position: absolute;
+    margin-left: 120px;
+    font-family: sans-serif;
+    /*color: blueviolet; */
+}
+
+a:hover {
+    color: white;
+    transition: all .3s;
+}
+
+.opciones {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    padding: 0%;
+    width: 32%;
+    height: 20%;
+    list-style: none;
+    left: 65%;
+    top: 30%;
+}
+
+.opciones li {
+    font-size: 120%;
+    margin-right: 5%;
+}
+
+.cl_name {
+    top: 30%;
+    color: blue;
+    margin: 0%;
+    padding: 0%;
+    font-family: Arial;
+    font-weight: 700;
+    font-size: 105%;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    list-style: none;
+    background-color: rgb(197, 187, 187);
+    height: 120px;
+    width: 140px;
+    margin: 0%;
+    padding: 0%;
+    left: 58%;
+    padding-top: 15px;
+}
+
+
+
+.submenu li {
+    text-decoration: none;
+    text-align: center;
+    font-size: 90%;
+    padding: 5% 1%;
+}
+
+.submenu li a {
+    display: block;
+}
+
+li {
+    font-family: sans-serif;
+    font-size: 90%;
+}
+
+a {
+    text-decoration: none;
+    color: blueviolet;
+}
+
+.opciones li:hover .submenu {
+    display: block;
+}
+
+/*-----------------------------FIN DE MENU DE NAVEGACION---------------------
+-------------------------------COMIENZO DE APARTADO 1------------------------*/
+
+.apartado_1 {
+    position: absolute;
+    flex-direction: column;
+    top: 30%;
+    left: 10px;
+    width: 85%;
+    height: 60%;
+    margin-left: 8%;
+    z-index: 1;
+}
+
+
+h2 {
+    font-family: sans-serif;
+    font-size: 24px;
+    text-decoration: none;
+    color: blueviolet;
+    padding-bottom: 1%;
+    text-align: center;
+}
+
+p1 {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    font-family: sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    left: 0%;
+    padding-bottom: 0.7%;
+    color: blueviolet;
+    font-weight: 600;
+
+}
+
+.slider
+{
+    width: 100%;
+    align-items: center;
+}
+
+.container{
+    width: 100%;
+    height: 70%;
+    max-height: 80vh;
+    margin: 20 auto;
+    overflow: hidden;
+
+}
+
+.sliderContainer{
+    display: grid;
+    grid-template-columns: 50px auto 50px;
+    align-items: center;
+  
+    gap: 1em;
+}
+
+.apartado1_1
+{
+    margin-top: 2%;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    opacity: 0;
+    pointer-events: none;
+
+    display: grid;
+    align-items: center;
+
+    transition: opacity 0.30s;
+}
+
+.showApartado
+{
+    opacity: 1;
+    pointer-events: unset;
+}
+
+.opcionesCompra
+{
+    position: absolute;
+    align-items: center;
+    width: 79%;
+    height: 50%;
+    left: 10%;
+}
+
+.square {
+    content: '';
+    position: absolute;
+    top: 27%;
+    left: 10px;
+    width: 85%;
+    height: 60%;
+    margin-left: 8%;
+    margin-right: 8%;
+    background-color: rgb(228, 228, 228);
+    border-radius: 10px;
+}
+
+
+.Divisas {
+    position: absolute;
+    width: 25%;
+    height: 63%;
+    top: 16%;
+    left: 2%;
+    border-radius: 12px;
+
+    object-fit: cover;
+}
+
+.divisasTxt {
+    position: absolute;
+    font-family: sans-serif;
+    background-color: blueviolet;
+    border-radius: 12px;
+    padding: 12px;
+    color: white;
+    top: 85%;
+    left: 10%;
+}
+
+.Acciones {
+    position: absolute;
+    width: 25%;
+    height: 63%;
+    top: 16%;
+    left: 38%;
+    border-radius: 12px;
+
+    object-fit: cover;
+}
+
+.accionesTxt {
+    position: absolute;
+    font-family: sans-serif;
+    background-color: blueviolet;
+    border-radius: 12px;
+    padding: 12px;
+    color: white;
+    top: 85%;
+    left: 46%;
+}
+
+.Materias {
+    position: absolute;
+    width: 25%;
+    height: 63%;
+    top: 16%;
+    right: 2%;
+    border-radius: 12px;
+
+    object-fit: cover;
+}
+
+.materiasTxt {
+    position: absolute;
+    font-family: sans-serif;
+    background-color: blueviolet;
+    border-radius: 12px;
+    padding: 12px;
+    color: white;
+    top: 85%;
+    left: 81%;
+}
+
+.slideButton
+{
+    width: 100%;
+    height: 10%;
+    cursor: pointer;
+}
+
+.leaderboard
+{
+    display: flex;
+    width: 55%;
+    margin-left: 290px;
+    flex-direction: row;
+    justify-content: center;
+    background-color: white;
+    border-radius: 12px;
+    align-items: center;
+
+
+    object-fit: cover;
+    gap: 2em;
+}
+
+.rankingTitle
+{
+    font-size: 150%;
+    font-family: sans-serif;
+    font-weight: 500;
+    text-shadow: 2px lightgray;
+    color: white;
+    background-color: rgb(33, 175, 33);
+    padding: 15px;
+    border-radius: 12px;
+}
+.rankingTitle2
+{
+    font-size: 110%;
+    width: 45%;
+    margin-left: 21%;
+    font-family: sans-serif;
+    font-weight: 500;
+    color: white;
+    background-color: rgb(33, 175, 33);
+    padding: 10px;
+    border-radius: 12px;
+    justify-content: center;
+
+    object-fit: cover;
+}
+
+input[type="button"].rankingTitle
+{
+    background-color: rgb(45, 197, 45) ;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.leaderboardList
+{
+    display: flex;
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 14%;
+    width: 55%;
+    height: 80%;
+    margin-left: 8%;
+    margin-right: 8%;
+    background-color: rgb(228, 228, 228);
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+
+    visibility: hidden;
+}
+
+/*-----------------------------------------------open ranking list -----------------------------------------*/
+
+.leaderboardList.rankingList2
+{
+    visibility: visible;
+    z-index: 3;
+}
+
+
+
+.leaderboardList h3
+{
+    position: absolute;
+    background-color: blueviolet;
+    color: white;
+    width: 20%;
+    padding: 12px;
+    border-radius: 12px;
+    top: 1%;
+}
+
+.leaderboardList h4
+{
+    position: absolute;
+    color: blueviolet;
+    font-family: sans-serif;
+    font-size: 115%;
+    padding: 12px;
+    top: 15%;
+}
+
+.rankingTable
+{
+    position: absolute;
+    height: 15%;
+    width: 55%;
+    top: 30%;
+    padding: 15px;
+    background-color: white;
+
+    border-collapse: collapse;
+    border-spacing: 0%;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    box-shadow: 5px 5px 12px rgb(189, 174, 174);
+    text-align: center;
+}
+
+.rankingTable tr
+{
+    padding: 12px 12px;
+    border: 2px groove grey;
+    margin: 18px 18px;
+}
+
+.rankingTable td
+{
+    font-family: sans-serif;
+    background-color: white;
+    color: blueviolet;
+    font-weight: 700;
+
+}
+
+.rankingTable th
+{
+    padding: 10px 18px;
+    font-family: sans-serif;
+    border-bottom: ridge;
+    width: 12%;
+
+    background-color: blueviolet;
+    color: white;
+}
+
+/* ------------------------------------OPERACIONES: DIVISAS--------------------*/
+
+.apartado2 {
+    display: flex;
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 14%;
+    width: 55%;
+    height: 80%;
+    margin-left: 8%;
+    margin-right: 8%;
+    background-color: rgb(228, 228, 228);
+    border-radius: 10px;
+
+    visibility: visible;
+}
+
+.apartado2.closeAp2
+{
+    visibility: hidden;
+}
+
+h3 {
+    top: 0%;
+    font-size: 180%;
+    font-family: sans-serif;
+    color: blueviolet;
+    padding: 3% 3%;
+    width: 94%;
+    text-align: center;
+}
+
+.CTable {
+    position: absolute;
+    background-color: white;
+    border-radius: 12px;
+    height: 77%;
+    width: 88%;
+    top: 18%;
+    left: 6%;
+    padding-top: 29%;
+    padding: 3%;
+}
+
+
+.tituloTabla{
+    position: absolute;
+    font-family: Helvetica;
+    font-weight: 900;
+    font-size: 100%;
+    width: 100%;
+    left: 27%;
+    top: 0%;
+}
+
+.CTable td{
+
+    height: 6%; 
+    width: 5%; 
+    margin: 0%;
+    padding: 0%;
+}
+
+input[type="text"]{
+
+    border:none;
+    font-weight: 600; 
+    font-size:110%; 
+    width:60%;
+    border: none transparent;
+    outline: none;
+    pointer-events: none;
+}
+
+
+
+.tableLst {
+    display: flex;
+    left: 0%;
+    justify-content: space-between;
+    margin: 0%;
+    height: 80%;
+    width: 65%;
+    list-style: none;
+    align-items: center;
+}
+
+.tableLst li{
+
+    margin-right: 20%;
+
+}
+
+.tableLst li input[type="button"] {
+
+    top: 30px;
+    font-family: Arial;
+    font-size: 110%;
+    font-weight: 700;
+    border: solid 1px;
+    height: 88%;
+    padding: 7px;
+    width: 120%;
+}
+
+
+
+/*-----------------------------------Popup compra---------------*/
+
+#closeButton {
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    height: 10%;
+    width: 6%;
+    margin: 0%;
+    font-family: Arial;
+    color: blue;
+    background-color: white;
+    border-color: white;
+}
+
+
+.popupOperacion,
+.popupOperacion2 {
+    position: absolute;
+    visibility: hidden;
+    width: 30%;
+    height: 35%;
+    background-color: white;
+    border-color: black;
+    border-radius: 12px;
+    box-shadow: 0% 2% 5% rgba(0, 0, 0, 0.2);
+    z-index: 3;
+    left: 40%;
+    top: 40%;
+    padding: 0%;
+    margin: 0%;
+}
+
+.popupOperacion.open-popup,
+.popupOperacion2.open-popup2 {
+    visibility: visible;
+}
+
+.formOperacion 
+{
+    position: absolute;
+    align-items: center;
+    top: 30%;
+    height: 66%;
+    width: 90%;
+    margin: 0%;
+    padding: 0%;
+}
+
+.formOperacion ul
+{
+    margin-top: 7%;
+}
+
+.hOperacion
+{
+    position: absolute;
+    top: 0%;
+    font-family: Arial;
+    font-weight: 500;
+    font-size: 150%;
+    left: 38%;
+    height: 5%;
+}
+
+.listaOperacion
+{
+    position: absolute;
+    top: 10%;
+    height: 15%;
+    width: 100%;
+    left: 13%;
+    align-items: center;
+    display: inline;
+    justify-content: space-between;
+}
+
+.listaOperacion >label
+{
+    font-size: 130%;
+    font-weight: 600;
+    font-family: Arial;
+    margin-right: 10px;
+}
+
+/*
+.listaOperacion
+{
+    position: absolute;
+    list-style: none;
+    top: 50%;
+    width: 80%;
+    height: 15%;
+    align-items: center;
+    font-size: 100%;
+}
+
+.listaOperacion > label
+{
+    display: inline;
+    flex-direction: row;
+    font-size: 120%;
+    font-family: Arial;
+    font-weight: 500;
+    margin-top: 10%;
+    margin-left: 12%;
+}
+*/
+
+#cantidad
+{
+    text-align: center;
+    width: 26%;
+    height: 30px;
+    font-size: 120%;
+    font-weight: 500;
+    border: solid 2px black;
+    margin-right: 10px;
+}
+
+#cantidad2
+{
+    text-align: center;
+    width: 26%;
+    height: 30px;
+    font-size: 120%;
+    font-weight: 500;
+    border: solid 2px black;
+    margin-right: 10px;
+}
+
+.bStyle
+{
+    border-radius: 15px;
+    width: 13%;
+    height: 107%;
+    margin-right: 10px;
+}
+
+.bStyle:hover
+{
+    background-color: blueviolet;
+    color: white;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.comprarButton
+{
+    position: absolute;
+    height: 25%;
+    top: 68%;
+    width: 40%;
+    margin: 0%;
+    left: 35%;
+
+    background-color: white;
+    border: 1px solid black;
+    font-size: 120%;
+}
+
+.listaPrecio
+{
+    position: absolute;
+    list-style: none;
+    justify-content: space-between;
+    width: 50%;
+    margin: 0%;
+    top: 25%;
+    left: 15%;
+}
+.listaPrecio li
+{
+    font-size: 110%;
+    font-weight: 600;
+    display: inline;
+    margin-left: 3%;
+}
+
+
+/*---------------------------------OPERACIONES: ACCIONES------------------------------------*/
+
+.apartado3
+{
+    display: flex;
+    content: '';
+    position: absolute;
+    top: 190%;
+    left: 14%;
+    width: 55%;
+    height: 80%;
+    margin-left: 8%;
+    margin-right: 8%;
+    background-color: rgb(228, 228, 228);
+    border-radius: 10px;
+
+    visibility: visible;
+}
+
+.apartado3.closeAp3
+{
+    visibility: hidden;
+}
+
+.apartado3 .CTable th
+{
+    margin-left: 7%;
+}
+
+/*---------------------------------OPERACIONES: ACCIONES------------------------------------*/
+
+.apartado4
+{
+    display: flex;
+    content: '';
+    position: absolute;
+    top: 280%;
+    left: 14%;
+    width: 55%;
+    height: 80%;
+    margin-left: 8%;
+    margin-right: 8%;
+    background-color: rgb(228, 228, 228);
+    border-radius: 10px;
+
+    visibility: visible;
+}
+
+.apartado4.closeAp4
+{
+    visibility: hidden;
+}
+
+.apartado4 .CTable th
+{
+    margin-left: 7%;
+}
+
+/*--------------------------------------botones-----------*/
+
+input[type="button" ]:hover, input[type="submit"]:hover
+{
+    background-color: blueviolet;
+    transition: all .3s;
+}
+
+input[type="button" ], input[type="submit"]
+{
+    cursor: pointer;
+    color: black;
+    border-radius: 12px;
+    font-weight: 600;
+    background-color: white;
+}
+
+/* ---------pie de pagina----------*/
+.pieDePagina
+{
+    position: absolute;
+    background-color: lightgrey;
+    bottom: 0%;
+    width: 100%;
+    max-width: 100%;
+    height: 3%;
+    max-height: 12%;
+}
+.contacto
+{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top:30%;
+    width: 17%;
+    height: 75%;
+    left: 30%;
+    padding: 0%;
+}
+
+.contacto li
+{
+    display: block;
+    font-size: 88%;
+    text-decoration: none;
+    width: 100%;
+}
+
+p2
+{
+    position: absolute;
+    left: 5%;
+    top: 19%;
+    width: 15%;
+    color: black;
+    font-size: 22px;
+    font-family: Arial;
+    margin: 0;
+    font-weight: 200;
+}
+
+.pieDePagina ul
+{
+    margin-left: 14%;
+    font-weight: 600;
+}
+
+                                    /* Page config when Leaderboards opens */
+
+.back_settings.changeBack2
+{
+    height: 1900px;
+}
+
+.back_settings2.changeBack2
+{
+    height: 1800px;
+}
+body.changeBack2
+{
+    height: 1700px;
+}
+.apartado2.changeBack2
+{
+    top:0%;
+    height: 1px;
+}
+.apartado3.changeBack2
+{
+    top:0%;
+    height: 1px;
+}
+.apartado4.changeBack2
+{
+    top:0%;
+    height: 1px;
+}
+.main.changeBack2
+{
+    height: 5.5%;
+}
+.pieDePagina.changeBack2
+{
+    height: 5.5%;
+}
+
+
+
+                                                /* End of config */
+
+
+
+
+

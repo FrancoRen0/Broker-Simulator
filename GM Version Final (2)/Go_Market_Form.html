@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <link rel="Stylesheet" href="GMStyle_Form.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+- Go Market Create Account -
+</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="back_settings"></div>
+        <div class="main">
+            <a href="Go_Market_Form.html" class="logo">
+                <img src="SBicon_2.png" alt="SBicon" class="logoImg"> 
+                <h1> Go Market</h1>
+            </a>
+            <div class="nav">
+                <ul class="menu">
+                    <li style=" margin: 0; padding: 1%;"><a href="Go_Market_Form.html">|Home|</a></li>
+                    <li style="margin: 0; padding: 1%;"><a href="Go_Market_inicioV3.html">|Sign in|</a></li>
+                    <li style="margin: 0; padding: 1%;"><a href="#">|Menu|</a>
+                        <ul class="submenu">
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <form class="formulary" action = 'registration_form.php' method = "post">  <!--action="Go_Market_inicioV3.html"--> 
+            <label><h2> Account creation </h2></label>
+            <label for="name"> Name: </label>
+            <input id="iname" type="text" name="name" required onkeyup="validName()"></br>
+            <span id="nameError"></span>
+
+            <label for="iemail"> E-mail: </label>
+            <input id="iemail" type="email" name="email" required onkeyup = "validMail()"></br>
+            <span id="mailError"></span>
+
+            <label for="ipass"> Password:</label>
+            <input id="ipass" type="password" name="pssw" required onkeyup = "validPssw()"></br>
+            <span id = "psswError"></span>
+
+            <label for="ipass2"> Repeat password:</label>
+            <input id="ipass2" type="password" name="pssw2" required onkeyup = "validPssw2()" ></br>
+            <span id = "psswError2"></span>
+
+            <input type="submit" value="ingresar"> </br>
+        </form>
+    </header>
+    <script src="GMScript_Form.js"></script>
+</body>
+
+</html>
